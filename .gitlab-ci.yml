@@ -7,4 +7,4 @@ xx-wiki:
     - echo $p
     - gitbook install
     - gitbook build
-    - setsid nohup gitbook serve > nohup.out 2>&1 &
+    - nohup gitbook serve --port 4000 >> /opt/logs/gitbook/wiki.mym.log 2>&1 &
