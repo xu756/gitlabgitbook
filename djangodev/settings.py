@@ -86,7 +86,7 @@ TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 USE_I18N = True
 
 USE_L10N = True
-MEDIA_URL = 'media/'  # 上传图片的路径
+MEDIA_URL = '/media/'  # 上传图片的路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 上传图片的根路径
 
 # 静态文件的根路径

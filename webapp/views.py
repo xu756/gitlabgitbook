@@ -1,16 +1,47 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+import gitlab
+from webapp.models import Banner, Message
+from django.views.decorators.csrf import csrf_exempt
 
-from .data import *
-# from .models import Stock
 
-years = 1
+gl = gitlab.Gitlab(url='http://192.168.190.129:8090/', private_token='glpat-hbSBsALhCR52ooe1syUh')
+project = gl.projects.get(2, lazy=True)
 
 
 
 def index(request):
     # posts = Post.objects.all()
-    return render(request, 'index.html',)
+    release = project.releases.list()
+    banners = Banner.objects.order_by('sort')
+    
+    
+    # 轮播图
+    return render(request, 'index.html', {
+        'release': release,
+       'banners': banners,
+    })
+
+
+
+def gitlab_view(request):
+
+    release = project.releases.list()
+    print(release)
+
+@csrf_exempt
+def feedback(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        message = Message(name=name, email=email, message=message)
+        message.save()
+        return JsonResponse({'message': 'success'})
+    else:
+        return JsonResponse({'message':'error'})
+
+
 
 
 # def stock_data_view(request, company_name):
