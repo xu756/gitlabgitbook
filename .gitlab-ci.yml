@@ -1,0 +1,13 @@
+stages:
+  - build
+test-wiki:
+    #下面这里是项目的tag   根据上面注册GitLab Runner第4步设置的tags填写
+  tags:   
+    - dev
+  stage: build
+  script:
+    - p=`pwd`
+    - echo $p
+    - gitbook install
+    - gitbook build
+    - setsid nohup sh startup.sh > nohup.out 2>&1 &
