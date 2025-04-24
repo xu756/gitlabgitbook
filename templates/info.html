@@ -161,7 +161,7 @@
                     <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">
                       提交: {{ tag.commit.short_id }}
                     </span>
-                    <span> 创建于 {{ tag.created_at|date:"Y-m-d H:i" }} </span>
+                    <span> 创建于 {{ tag.created_at|format_gitlab_date }} </span>
                     {% if tag.protected %}
                     <span class="bg-green-100 text-green-800 px-2 py-1 rounded"> 受保护 </span>
                     {% endif %}
@@ -230,7 +230,7 @@
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    提交时间: {{ tag.commit.authored_date|date:"Y-m-d H:i" }}
+                    提交时间: {{ tag.commit.authored_date }}
                   </div>
                 </div>
               </div>
@@ -254,7 +254,7 @@
                     <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">
                       关联标签: {{ tag.name }}
                     </span>
-                    <span>发布于 {{ tag.created_at|date:"Y-m-d H:i" }}</span>
+                    <span>发布于 {{ tag.created_at|format_gitlab_date }}</span>
                   </div>
                 </div>
                 <a
