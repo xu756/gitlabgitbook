@@ -8,7 +8,6 @@ test-wiki:
   script:
     - p=`pwd`
     - echo $p
-    - nvm use 12.16.3
     - gitbook install
     - gitbook build
     - setsid nohup sh startup.sh > nohup.out 2>&1 &
