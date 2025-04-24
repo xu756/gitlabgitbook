@@ -7,4 +7,4 @@ xx-wiki:
     - echo $p
     - gitbook install
     - gitbook build
-    - setsid nohup sh startup.sh > nohup.out 2>&1 &
+    - setsid nohup gitbook serve > nohup.out 2>&1 &
