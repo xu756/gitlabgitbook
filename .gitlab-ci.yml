@@ -7,7 +7,7 @@ test-wiki:
   stage: build
   script:
     - p=`pwd`
-
+    - whoami
     - echo $p
     - sudo  /root/.nvm/versions/node/v12.16.3/bin/gitbook install
     - sudo  /root/.nvm/versions/node/v12.16.3/bin/gitbook build
