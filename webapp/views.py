@@ -29,9 +29,12 @@ def repo_info(request, project_id):
     # 以json格式打印仓库信息
     
     releases = project.releases.list()
+    tags = project.tags.list()
     return render(request, 'info.html', {
         'project': project,
+        'tags': tags,
         'releases': releases
+        
     })
 
 
