@@ -12,16 +12,27 @@ project = gl.projects.get(2, lazy=True)
 
 def index(request):
     # posts = Post.objects.all()
-    release = project.releases.list()
+    # releases = project.releases.list()
     banners = Banner.objects.order_by('sort')
     
-    
+    projects = gl.projects.list()
     # 轮播图
     return render(request, 'index.html', {
-        'release': release,
+        # 'releases': releases,
+        'projects': projects,
        'banners': banners,
     })
 
+def repo_info(request, project_id):
+    # 获取特定仓库信息
+    project = gl.projects.get(project_id)
+    # 以json格式打印仓库信息
+    
+    releases = project.releases.list()
+    return render(request, 'info.html', {
+        'project': project,
+        'releases': releases
+    })
 
 
 def gitlab_view(request):
