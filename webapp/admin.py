@@ -7,7 +7,7 @@ class BannerAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'image', 'url', 'sort','add_time']
     list_per_page = 5
     list_max_show_all = 200
-    list_filter = ['title', 'sort']
+    list_filter = ['title', ]
     list_display_links = ['title']
     pass
 @admin.register(Message)

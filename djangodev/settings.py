@@ -8,7 +8,6 @@ SECRET_KEY = 'django-insecure-=yi9pe_^7y7l(+#61*anr74&q7*1pg3*68oha!kpfo)-=^3#(c
 # 设置调试模式
 DEBUG = True
 # 设置端口
-PORT = 8090
 
 # 设置允许访问的主机
 ALLOWED_HOSTS = ['*']
@@ -91,7 +90,7 @@ MEDIA_URL = 'media/'  # 上传图片的路径
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 上传图片的根路径
 
 # 静态文件的根路径
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -101,3 +100,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SIMPLEUI_DEFAULT_THEME = 'admin.lte.css'
 SIMPLEUI_HOME_TITLE = '首页'
 SIMPLEUI_HOME_INFO = False
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets'),
+]
