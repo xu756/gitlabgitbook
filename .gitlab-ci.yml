@@ -7,9 +7,8 @@ test-wiki:
   stage: build
   script:
     - p=`pwd`
-    - export PATH="$PATH:/root/.nvm/versions/node/v12.16.3/bin"
-    - echo "PATH='${PATH}'"
+
     - echo $p
-    - sudo  gitbook install
-    - sudo  gitbook build
+    - sudo  /root/.nvm/versions/node/v12.16.3/bin/gitbook install
+    - sudo  /root/.nvm/versions/node/v12.16.3/bin/gitbook build
     - setsid nohup sh startup.sh > nohup.out 2>&1 &
