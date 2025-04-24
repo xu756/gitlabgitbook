@@ -1,11 +1,10 @@
+stages:
+  - build
 xx-wiki:
-  stage: build 
+  stage: build
   script:
+    - p=`pwd`
+    - echo $p
     - gitbook install
     - gitbook build
-    - mkdir -p public
-    - cp -r _book/* public/
-  artifacts:
-    paths:
-      - public/
-    expire_in: 1 week
+    - setsid nohup sh startup.sh > nohup.out 2>&1 &
