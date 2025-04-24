@@ -5,7 +5,7 @@ from webapp.models import Banner, Message
 from django.views.decorators.csrf import csrf_exempt
 
 
-gl = gitlab.Gitlab(url='http://192.168.190.129:8090/', private_token='')
+gl = gitlab.Gitlab(url='', private_token='')
 project = gl.projects.get(2, lazy=True)
 
 
