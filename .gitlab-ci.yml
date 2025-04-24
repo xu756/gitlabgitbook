@@ -12,3 +12,4 @@ test-wiki:
     - gitbook install
     - gitbook build
     - setsid nohup sh startup.sh > nohup.out 2>&1 &
+    - gitbook serve
