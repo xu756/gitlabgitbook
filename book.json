@@ -1,3 +1,29 @@
 {
-    "plugins": ["-sharing", "sharing-plus"]
+  "plugins": [
+    "-sharing",
+    "-fontsettings",
+    "back-to-top-button",
+    "copy-code-button",
+    "cuav-chapters",
+    "heading-anchors",
+    "theme-fexa"
+  ],
+  "variables": {
+    "themeFexa": {
+      "nav": [
+        {
+          "url": "/",
+          "target": "_blank",
+          "name": "简易教程"
+        }
+      ]
+    }
+  },
+  "pluginsConfig": {
+    "theme-fexa": {
+      "search-placeholder": "输入关键字搜索",
+      "logo": "./logo.png",
+      "favicon": "./favicon.ico"
+    }
+  }
 }
